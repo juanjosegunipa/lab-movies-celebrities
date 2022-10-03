@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>New Movie</h2>
+    <form method="post" action="/movies/create">
+        <label>Title</label>
+        <input type="text" name="title">
+        <label>Genre</label>
+        <input type="text" name="genre">
+        <label>Plot</label>
+        <input type="text" name="plot">
+        <label>Cast</label>
+        <select name="cast" multiple>
+            {{#each myCelebritiesArray}}
+            <option value="{{this._id}}">
+                {{this.name}}
+            </option>
+            {{/each}}
+        </select>
+        <button type="submit">Submit movie</button>
+    </form>
+</body>
+
+</html>
